@@ -1,0 +1,130 @@
+/*
+import android.database.Cursor;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.BaseColumns;
+import android.widget.CursorAdapter;
+import android.widget.SimpleCursorAdapter;
+*/
+
+/*
+	private void insertTable(){
+				if(sqlDB != null){
+					ContentValues vals = new ContentValues();
+					vals.put(DBContract.LocTable.COL_LON_STRING,
+						((TextView)findViewById(R.id.tv1)).getText().toString());
+
+					vals.put(DBContract.LocTable.COL_LAT_STRING,
+						((TextView)findViewById(R.id.tv2)).getText().toString());
+
+					vals.put(DBContract.LocTable.COL_INPUT_STRING, 
+						((EditText)findViewById(R.id.input)).getText().toString());
+						((TextView)findViewById(R.id.input)).setText("");
+
+					sqlDB.insert(DBContract.LocTable.TABLE_NAME,null,vals);
+					populateTable();
+				} else {
+					//Log.d(TAG, "Unable to access database for writing.");
+					tv.append("unable to access database");
+				}
+	}
+
+	private void populateTable(){
+		if(sqlDB != null) {
+			try {
+				if(sqlCursorAdapter != null 
+						&& sqlCursorAdapter.getCursor() != null){
+					if(!sqlCursorAdapter.getCursor().isClosed()){
+						sqlCursorAdapter.getCursor().close();
+					}
+				}
+				sqlCursor = sqlDB.query(DBContract.LocTable.TABLE_NAME,
+						new String[]{
+							DBContract.LocTable._ID,
+							DBContract.LocTable.COL_LON_STRING,
+							DBContract.LocTable.COL_LAT_STRING,
+							DBContract.LocTable.COL_INPUT_STRING},
+							//DBContract.DemoTable.COLUMN_NAME_DEMO_INT}, 
+						null,null, null, null, null);
+
+				ListView sqlListView = (ListView) findViewById(R.id.sql_list_view);
+				sqlCursorAdapter = new SimpleCursorAdapter(this,
+						R.layout.sql_item,
+						sqlCursor,
+						new String[]{DBContract.LocTable.COL_LON_STRING,
+							DBContract.LocTable.COL_LAT_STRING,
+							DBContract.LocTable.COL_INPUT_STRING},
+						new int[]{R.id.sql_lon, R.id.sql_lat, R.id.sql_string},
+						0);
+
+				sqlListView.setAdapter(sqlCursorAdapter);
+			} catch (Exception e) {
+				//Log.d(TAG, "Error loading data from database");
+				tv.append("Error loading data");
+			}
+		}
+	}
+	*/
+
+
+/*
+class DBContract {
+	private DBContract(){};
+
+	public final class LocTable implements BaseColumns {
+		public static final String DB_NAME = "location_db";
+		public static final String TABLE_NAME = "location";
+		public static final String COL_INPUT_STRING = "input";
+		public static final String COL_LON_STRING = "lon";
+		public static final String COL_LAT_STRING = "lat";
+		public static final int DB_VERSION = 1;
+
+		public static final String SQL_CREATE_TABLE = "CREATE TABLE " +
+			LocTable.TABLE_NAME + "(" + 
+			LocTable._ID + " INTEGER PRIMARY KEY NOT NULL," +
+			LocTable.COL_LON_STRING + " VARCHAR(255)," +
+			LocTable.COL_LAT_STRING + " VARCHAR(255)," +
+			LocTable.COL_INPUT_STRING + " VARCHAR(255)" + ");";
+		//DemoTable.COLUMN_NAME_DEMO_INT + " INTEGER);";
+
+		public  static final String SQL_DROP_TABLE = 
+			"DROP TABLE IF EXISTS " + LocTable.TABLE_NAME;
+	}
+}
+*/
+
+/*
+public class SQLiteLocation extends SQLiteOpenHelper {
+    public SQLiteLocation(Context context) {
+        super(context, DBContract.LocTable.DB_NAME, null, DBContract.LocTable.DB_VERSION);
+    }
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(DBContract.LocTable.SQL_CREATE_TABLE);
+        ContentValues testValues = new ContentValues();
+        testValues.put(DBContract.LocTable.COL_LON_STRING, "Longitude");
+        testValues.put(DBContract.LocTable.COL_LAT_STRING, "Latitude");
+        testValues.put(DBContract.LocTable.COL_INPUT_STRING, "input string");
+        db.insert(DBContract.LocTable.TABLE_NAME,null,testValues);
+    }
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL(DBContract.LocTable.SQL_DROP_TABLE);
+        onCreate(db);
+    }
+}
+*/
+
+		//create button event
+		/*
+		btn = (Button) findViewById(R.id.button1);
+		btn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				getPerm();
+			}
+		});
+		*/
+/*
